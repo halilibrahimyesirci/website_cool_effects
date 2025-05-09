@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}<span data-lang-key="parallaxEffectTitle">Parallax Scrolling Effect</span> - Cool Effects{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/parallax_effect.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container parallax-page-common">
+    <h1 data-lang-key="parallaxEffectTitle">Parallax Scrolling Effect</h1>
+    
+    <section class="parallax-section" id="section1">
+        <div class="parallax-bg bg1"></div>
+        <div class="parallax-content">
+            <h2 data-lang-key="parallaxSection1Title">Section One</h2>
+            <p data-lang-key="parallaxSection1Text">Scroll down to see the parallax effect in action. The background image will move at a different speed than the foreground content.</p>
+        </div>
+    </section>
+
+    <section class="parallax-section" id="section2">
+        <div class="parallax-bg bg2"></div>
+        <div class="parallax-content">
+            <h2 data-lang-key="parallaxSection2Title">Section Two</h2>
+            <p data-lang-key="parallaxSection2Text">This is another section with a different background. Notice the layered effect as you scroll.</p>
+        </div>
+    </section>
+
+    <section class="parallax-section" id="section3">
+        <!-- This section can be a normal content section without a parallax background -->
+        <div class="parallax-content regular-content">
+            <h2 data-lang-key="parallaxSection3Title">Content Section</h2>
+            <p data-lang-key="parallaxSection3Text">This section demonstrates how normal content flows between parallax sections. The effect is most noticeable when there's a contrast between scrolling speeds.</p>
+        </div>
+    </section>
+     <section class="parallax-section" id="section4">
+        <div class="parallax-bg bg3"></div>
+        <div class="parallax-content">
+            <h2 data-lang-key="parallaxSection4Title">Section Three (Parallax)</h2>
+            <p data-lang-key="parallaxSection4Text">More parallax goodness! The key is to have distinct layers moving at different rates.</p>
+        </div>
+    </section>
+
+    <div class="container mt-3">
+         <p data-lang-key="parallaxExplanation">
+            The parallax effect is achieved by setting different scroll speeds for background and foreground layers. 
+            This can be done using CSS (perspective and transform properties) or JavaScript for more complex control over scroll events.
+            In this example, we'll primarily use CSS for basic parallax and might enhance with JS for smoother effects or more layers.
+        </p>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/parallax_effect.js') }}"></script>
+{% endblock %}

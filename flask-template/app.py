@@ -23,6 +23,10 @@ def loading_screen(effect_id):
 def blur_effect(effect_id):
     return render_template(f'blur_effect_{effect_id}.html')
 
+@app.route('/parallax')
+def parallax_effect():
+    return render_template('parallax_effect.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
