@@ -1,8 +1,4 @@
 /* Liquid Chrome Effect CSS */
-body {
-    /* Ensure body takes up full viewport height if effect is page-centric */
-    /* background-color: #111; */ /* Dark background can make chrome pop */
-}
 
 .effect-container {
     text-align: center;

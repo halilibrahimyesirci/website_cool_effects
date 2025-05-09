@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}<span data-lang-key="cursorTrailEffectTitle">Cursor Trail/Spotlight Effect</span> - Cool Effects{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cursor_trail_effect.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container cursor-trail-page-common">
+    <h1 data-lang-key="cursorTrailEffectTitle">Cursor Trail/Spotlight Effect</h1>
+    
+    <div class="cursor-effect-area">
+        <p data-lang-key="cursorTrailInstructions">Move your mouse around this area to see the effect. We'll start with a simple dot trail.</p>
+        <p data-lang-key="cursorTrailExplanation">This effect uses JavaScript to track mouse movements and dynamically create or update elements that follow the cursor, creating a visual trail or a spotlight.</p>
+    </div>
+
+    {# Example of content that could be "illuminated" by a spotlight version #}
+    {# 
+    <div class="spotlight-content-example" style="margin-top: 50px; padding: 20px; background: #555; color: #fff; border-radius: 8px; text-align:center;">
+        <h2 data-lang-key="spotlightExampleTitle">Spotlight Content</h2>
+        <p data-lang-key="spotlightExampleText">If this were a spotlight effect, only the area around your cursor would be clearly visible.</p>
+    </div>
+    #}
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/cursor_trail_effect.js') }}"></script>
+{% endblock %}

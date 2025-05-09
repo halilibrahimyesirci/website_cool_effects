@@ -68,7 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
             parallaxSection3Text: "This section demonstrates how normal content flows between parallax sections. The effect is most noticeable when there's a contrast between scrolling speeds.",
             parallaxSection4Title: "Section Three (Parallax)",
             parallaxSection4Text: "More parallax goodness! The key is to have distinct layers moving at different rates.",
-            parallaxExplanation: "The parallax effect is achieved by setting different scroll speeds for background and foreground layers. This can be done using CSS (perspective and transform properties) or JavaScript for more complex control over scroll events. In this example, we'll primarily use CSS for basic parallax and might enhance with JS for smoother effects or more layers.",
+            parallaxExplanation: "The parallax effect is achieved by making background layers move at different speeds relative to the foreground. This page demonstrates two main types: JavaScript-controlled transform on background elements, and CSS 3D perspective. Adjust the `data-js-parallax-factor` (lower means more parallax) or CSS perspective values to see changes.",
+
+            // Cursor Trail/Spotlight Effect Translations
+            cursorTrailEffectTitle: "Cursor Trail/Spotlight Effect",
+            cursorTrailEffectDescription: "Creates a visual trail or a spotlight that follows the mouse cursor, adding an interactive element to the page.",
+            cursorTrailInstructions: "Move your mouse around this area to see the effect. We'll start with a simple dot trail.",
+            cursorTrailExplanation: "This effect uses JavaScript to track mouse movements and dynamically create or update elements that follow the cursor, creating a visual trail or a spotlight.",
+            spotlightExampleTitle: "Spotlight Content",
+            spotlightExampleText: "If this were a spotlight effect, only the area around your cursor would be clearly visible.",
 
             // About page specific
             aboutTitle: "About This Project",
@@ -118,6 +126,14 @@ document.addEventListener('DOMContentLoaded', () => {
             parallaxSection4Title: "Üçüncü Bölüm (Parallax)",
             parallaxSection4Text: "Daha fazla parallax güzelliği! Anahtar, farklı hızlarda hareket eden belirgin katmanlara sahip olmaktır.",
             parallaxExplanation: "Parallax efekti, arka plan ve ön plan katmanları için farklı kaydırma hızları ayarlanarak elde edilir. Bu, CSS (perspektif ve dönüştürme özellikleri) kullanılarak veya kaydırma olayları üzerinde daha karmaşık kontrol için JavaScript ile yapılabilir. Bu örnekte, temel parallax için öncelikle CSS kullanacağız ve daha fazla katman veya daha düzgün efektler için JS ile geliştirebiliriz.",
+
+            // Cursor Trail/Spotlight Effect Translations
+            cursorTrailEffectTitle: "İmleç İz/Spotlight Efekti",
+            cursorTrailEffectDescription: "Fare imlecini takip eden görsel bir iz veya bir spot ışığı oluşturur, sayfaya etkileşimli bir öğe ekler.",
+            cursorTrailInstructions: "Efekti görmek için bu alanın etrafında farenizi hareket ettirin. Basit bir nokta izi ile başlayacağız.",
+            cursorTrailExplanation: "Bu efekt, fare hareketlerini izlemek ve imleci takip eden görsel bir iz veya bir spot ışığı oluşturmak için dinamik olarak öğeler oluşturmak veya güncellemek için JavaScript kullanır.",
+            spotlightExampleTitle: "Spotlight İçerik",
+            spotlightExampleText: "Bu bir spotlight efekti olsaydı, yalnızca imlecinizin etrafındaki alan net bir şekilde görünür olurdu.",
 
             // About page specific
             aboutTitle: "Proje Hakkında",

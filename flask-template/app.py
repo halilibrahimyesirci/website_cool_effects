@@ -27,6 +27,10 @@ def blur_effect(effect_id):
 def parallax_effect():
     return render_template('parallax_effect.html')
 
+@app.route('/cursor-trail')
+def cursor_trail_effect():
+    return render_template('cursor_trail_effect.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
