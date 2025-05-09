@@ -3,6 +3,7 @@
 A Flask-based web application demonstrating a variety of cool and interactive visual effects for websites. Built with Python (Flask), HTML, CSS, and JavaScript.
 
 Project by: Halil İbrahim Yesirci
+Helpers: Github Copilot, Gemini 2.5 AI
 
 ## 🌟 Introduction
 
@@ -19,7 +20,6 @@ This project serves as a dynamic catalog of web-based visual effects, designed t
     *   Cursor Trail/Spotlight
     *   Text Animations (Typing, Reveal, Slide-up)
     *   Scroll-triggered Animations (Fade, Slide, Zoom, Counters)
-    *   *(...ve eklediğimiz diğer 6 efektin adı buraya eklenecek)*
 *   **Theme Switching:** Light and Dark mode options for comfortable viewing.
 *   **Language Switching:** Basic internationalization support (English and Turkish).
 *   **Interactive Previews:** Each effect is presented on its own page for a focused demonstration.
