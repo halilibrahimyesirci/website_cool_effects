@@ -23,5 +23,9 @@ def loading_screen(effect_id):
 def blur_effect(effect_id):
     return render_template(f'blur_effect_{effect_id}.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

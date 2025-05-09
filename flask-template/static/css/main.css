@@ -1,8 +1,58 @@
-body {
-    font-family: sans-serif;
+:root {
+    /* Light Theme (Default) */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #008080; /* Teal */
+    --secondary-color: #f0f0f0; /* Light Gray */
+    --accent-color: #00ff00; /* Neon Green */
+    --card-bg-color: #f9f9f9;
+    --card-border-color: #e0e0e0;
+    --header-bg-color: #f8f9fa;
+    --footer-bg-color: #f1f1f1;
+    --link-color: var(--primary-color);
+    --link-hover-color: #005f5f; /* Darker Teal */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212; /* Black */
+    --text-color: #e0e0e0;
+    --primary-color: #008080; /* Teal */
+    --secondary-color: #2c2c2c; /* Dark Gray */
+    --accent-color: #00ff00; /* Neon Green */
+    --card-bg-color: #1e1e1e;
+    --card-border-color: #3a3a3a;
+    --header-bg-color: #1c1c1c;
+    --footer-bg-color: #1a1a1a;
+    --link-color: var(--accent-color);
+    --link-hover-color: #00cc00; /* Brighter Neon Green */
+    --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+/* General Reset and Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px; /* Space for fixed header */
 }
 
 .container {
@@ -10,16 +60,16 @@ body {
     margin: auto;
     overflow: hidden;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg-color);
+    box-shadow: 0 0 10px var(--shadow-color);
 }
 
 h1, h2 {
-    color: #333;
+    color: var(--primary-color);
 }
 
 a {
-    color: #007bff;
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -38,4 +88,276 @@ ul li {
 
 ul ul {
     margin-left: 20px;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--header-bg-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header nav .logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+header nav .logo a:hover {
+    color: var(--accent-color);
+}
+
+header nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav .nav-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header nav .nav-links a:hover,
+header nav .nav-links a.active {
+    color: var(--accent-color);
+    background-color: var(--secondary-color);
+}
+
+/* Theme and Language Switcher Styles */
+.settings-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-switcher button,
+.language-switcher button {
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-switcher button:hover,
+.language-switcher button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Text color that contrasts with primary color */
+}
+.language-switcher button.active {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; /* Centers the content */
+}
+
+.effect-container {
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.effect-container h1, .effect-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+/* Card Styles for Effect Catalog */
+.effect-catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.effect-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.effect-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.effect-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.effect-card p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    min-height: 60px; /* Ensure cards have similar height if descriptions vary */
+}
+
+.effect-card .btn-view-effect {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Text color that contrasts with primary color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.effect-card .btn-view-effect:hover {
+    background-color: var(--link-hover-color);
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+    box-shadow: 0 -2px 5px var(--shadow-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Specific styles for individual effect pages can override these if needed */
+/* For example, if an effect needs a very dark or very light background specifically */
+
+/* Ensure content in effect pages also respects theme */
+.blur-page-common, .glitch-page-common, .liquid-chrome-page-common, .loading-page-common {
+    background-color: var(--card-bg-color); /* Use card background for consistency */
+    color: var(--text-color);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.blur-page-common h1, .glitch-page-common h1, .liquid-chrome-page-common h1, .loading-page-common h1 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+/* Adjust text color for specific elements if needed for contrast */
+.content-overlay { /* From blur_effect.css */
+    background-color: rgba(255, 255, 255, 0.15); /* Adjusted for dark theme visibility */
+    color: var(--text-color); /* Ensure text is readable in both themes */
+}
+[data-theme="dark"] .content-overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Darker overlay for dark theme */
+    color: #f0f0f0;
+}
+
+.glass-panel { /* From blur_effect.css */
+    background: var(--glass-panel-bg, rgba(255, 255, 255, 0.2));
+    color: var(--glass-panel-text-color, #fff);
+}
+[data-theme="light"] .glass-panel {
+    --glass-panel-bg: rgba(255, 255, 255, 0.2);
+    --glass-panel-text-color: #333; /* Darker text on light glass */
+}
+[data-theme="dark"] .glass-panel {
+    --glass-panel-bg: rgba(30, 30, 30, 0.3); /* Darker glass for dark theme */
+    --glass-panel-text-color: #e0e0e0; /* Lighter text on dark glass */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(200, 200, 200, 0.1);
+}
+[data-theme="dark"] .glass-panel h2, [data-theme="dark"] .glass-panel h3, [data-theme="dark"] .glass-panel p {
+    color: var(--glass-panel-text-color);
+}
+[data-theme="dark"] .glass-panel button {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+[data-theme="dark"] .glass-panel button:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glitch effect text color for dark theme */
+[data-theme="dark"] .glitch-text::before,
+[data-theme="dark"] .glitch-text::after {
+    color: var(--text-color); /* Ensure pseudo-elements also use theme color */
+}
+
+/* Liquid chrome text color */
+.liquid-text {
+    color: var(--primary-color); /* Default for light theme */
+}
+[data-theme="dark"] .liquid-text {
+    color: var(--accent-color); /* Neon green for dark theme */
+}
+
+/* Loading screen elements */
+[data-theme="dark"] .loader-spinner {
+    border-top-color: var(--accent-color);
+}
+[data-theme="dark"] .bouncing-dots div {
+    background-color: var(--accent-color);
+}
+[data-theme="dark"] .pulsing-circle {
+    border-color: var(--accent-color);
+}
+[data-theme="dark"] .progress-bar-inner {
+    background-color: var(--accent-color);
+}
+[data-theme="dark"] .rotating-squares::before, [data-theme="dark"] .rotating-squares::after {
+    border-color: var(--accent-color);
 }

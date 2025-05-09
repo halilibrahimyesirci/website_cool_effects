@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light"> <!-- Default theme -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Flask App{% endblock %}</title>
+    <title>{% block title %}Cool Effects - Halil İbrahim Yesirci{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     {% block head_links %}{% endblock %}
 </head>
 <body>
     <header>
         <nav>
-            <a href="{{ url_for('index') }}">Home</a>
-            <!-- Add other common navigation links here -->
+            <div class="logo">
+                <a href="{{ url_for('index') }}">CoolEffects</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}" class="nav-link" data-lang-key="home">Home</a></li>
+                <!-- Add other common navigation links here if needed -->
+                <li><a href="{{ url_for('about') }}" class="nav-link" data-lang-key="about">About</a></li>
+            </ul>
+            <div class="settings-controls">
+                <div class="theme-switcher">
+                    <button id="theme-toggle-btn" data-lang-key="toggleTheme">Toggle Theme</button>
+                </div>
+                <div class="language-switcher">
+                    <button id="lang-tr-btn" data-lang="tr">TR</button>
+                    <button id="lang-en-btn" data-lang="en" class="active">EN</button>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <p>&copy; 2025 Halil İbrahim Yesirci</p>
+        <p data-lang-key="footerText">&copy; 2024 Halil İbrahim Yesirci. All rights reserved.</p>
     </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>
