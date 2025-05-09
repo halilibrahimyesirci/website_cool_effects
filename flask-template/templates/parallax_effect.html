@@ -12,41 +12,44 @@
     <h1 data-lang-key="parallaxEffectTitle">Parallax Scrolling Effect</h1>
     
     <section class="parallax-section" id="section1">
-        <div class="parallax-bg bg1"></div>
+        {# JS Controlled Parallax - High Parallax Effect #}
+        <div class="parallax-bg bg1" data-js-parallax-factor="0.2"></div>
         <div class="parallax-content">
-            <h2 data-lang-key="parallaxSection1Title">Section One</h2>
-            <p data-lang-key="parallaxSection1Text">Scroll down to see the parallax effect in action. The background image will move at a different speed than the foreground content.</p>
+            <h2 data-lang-key="parallaxSection1Title">Section One (JS Parallax)</h2>
+            <p data-lang-key="parallaxSection1Text">Scroll down. This background moves slower than the content, controlled by JavaScript. Factor: 0.2 (More pronounced).</p>
         </div>
     </section>
 
-    <section class="parallax-section" id="section2">
-        <div class="parallax-bg bg2"></div>
-        <div class="parallax-content">
-            <h2 data-lang-key="parallaxSection2Title">Section Two</h2>
-            <p data-lang-key="parallaxSection2Text">This is another section with a different background. Notice the layered effect as you scroll.</p>
+    {# CSS 3D Parallax #}
+    <section class="parallax-section parallax-section-3d" id="section2">
+        <div class="parallax-bg-3d bg2"></div> {# Note: .bg2 class provides the background-image url from CSS #}
+        <div class="parallax-content parallax-content-3d"> {# Ensure this content is styled appropriately for 3D context #}
+            <h2 data-lang-key="parallaxSection2Title">Section Two (CSS 3D Parallax)</h2>
+            <p data-lang-key="parallaxSection2Text">This section uses CSS 3D transforms for a different parallax effect. The section itself is a scroll container.</p>
         </div>
     </section>
 
     <section class="parallax-section" id="section3">
-        <!-- This section can be a normal content section without a parallax background -->
         <div class="parallax-content regular-content">
             <h2 data-lang-key="parallaxSection3Title">Content Section</h2>
-            <p data-lang-key="parallaxSection3Text">This section demonstrates how normal content flows between parallax sections. The effect is most noticeable when there's a contrast between scrolling speeds.</p>
+            <p data-lang-key="parallaxSection3Text">This section demonstrates how normal content flows between parallax sections.</p>
         </div>
     </section>
+
      <section class="parallax-section" id="section4">
-        <div class="parallax-bg bg3"></div>
+        {# JS Controlled Parallax - Medium Parallax Effect #}
+        <div class="parallax-bg bg3" data-js-parallax-factor="0.5"></div>
         <div class="parallax-content">
-            <h2 data-lang-key="parallaxSection4Title">Section Three (Parallax)</h2>
-            <p data-lang-key="parallaxSection4Text">More parallax goodness! The key is to have distinct layers moving at different rates.</p>
+            <h2 data-lang-key="parallaxSection4Title">Section Four (JS Parallax)</h2>
+            <p data-lang-key="parallaxSection4Text">Another JavaScript controlled parallax background. Factor: 0.5 (Less pronounced than Section 1).</p>
         </div>
     </section>
 
     <div class="container mt-3">
          <p data-lang-key="parallaxExplanation">
-            The parallax effect is achieved by setting different scroll speeds for background and foreground layers. 
-            This can be done using CSS (perspective and transform properties) or JavaScript for more complex control over scroll events.
-            In this example, we'll primarily use CSS for basic parallax and might enhance with JS for smoother effects or more layers.
+            The parallax effect is achieved by making background layers move at different speeds relative to the foreground.
+            This page demonstrates two main types: JavaScript-controlled transform on background elements, and CSS 3D perspective.
+            Adjust the `data-js-parallax-factor` (lower means more parallax) or CSS perspective values to see changes.
         </p>
     </div>
 

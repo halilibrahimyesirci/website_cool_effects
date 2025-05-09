@@ -1,0 +1,128 @@
+/* Parallax Effect Styles */
+
+.parallax-page-common {
+    padding: 0; 
+    max-width: 100%; 
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+}
+
+.parallax-page-common > h1 {
+    text-align: center;
+    padding: 40px 20px 20px; 
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    background-color: var(--header-bg-color); 
+    margin-bottom: 0;
+}
+
+.parallax-section {
+    position: relative;
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    color: #fff; 
+}
+
+/* For JS Controlled Parallax Backgrounds */
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 140%; /* Taller to allow for movement without showing edges */
+    top: -20%;    /* Vertically centers the middle 100% part */
+    background-size: cover;
+    background-position: center center;
+    z-index: -1; 
+    will-change: transform; /* Performance hint */
+    /* background-attachment: fixed; REMOVED for JS control */
+}
+
+/* Specific backgrounds for each section */
+.parallax-bg.bg1 {
+    background-image: url('https://picsum.photos/seed/parallax1/1920/1080');
+}
+
+.parallax-bg.bg2 { /* This will now be styled by .parallax-bg-3d */
+    background-image: url('https://picsum.photos/seed/parallax2/1920/1080');
+}
+
+.parallax-bg.bg3 {
+    background-image: url('https://picsum.photos/seed/parallax3/1920/1080');
+}
+
+.parallax-content {
+    position: relative; 
+    z-index: 1;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    max-width: 700px;
+}
+
+.parallax-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #fff; 
+    font-weight: 600;
+}
+
+.parallax-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #f0f0f0; 
+}
+
+.regular-content {
+    background-color: var(--card-bg-color); 
+    color: var(--text-color); 
+    padding: 50px 20px;
+    min-height: auto; 
+}
+.regular-content h2{
+    color: var(--primary-color);
+}
+
+/* --- CSS 3D Parallax Styles (for section2) --- */
+.parallax-section-3d {
+    perspective: 100px; /* Adjust for more/less depth. Smaller value = more pronounced. */
+    /* min-height: 80vh; */ /* Already in .parallax-section */
+    /* overflow-x: hidden; */ /* Already in .parallax-section */
+    overflow-y: auto;   /* This section scrolls its own content */
+    transform-style: preserve-3d;
+    /* position: relative; */ /* Already in .parallax-section */
+}
+
+.parallax-bg-3d {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    transform: translateZ(-100px) scale(2); /* translateZ should be -(perspective value). Scale = 1 + (abs(translateZ) / perspective) */
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    /* Specific background image will be applied via .bg2 class */
+}
+
+.parallax-content-3d {
+    /* position: relative; */ /* Already in .parallax-content */
+    transform: translateZ(0); /* Ensures content is on the base Z plane */
+    /* text-align, padding, background-color, etc., can be inherited from .parallax-content or overridden */
+}
+
+
+.container.mt-3 p[data-lang-key="parallaxExplanation"] {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px auto; 
+    max-width: 900px; 
+    text-align: left;
+    line-height: 1.6;
+}
