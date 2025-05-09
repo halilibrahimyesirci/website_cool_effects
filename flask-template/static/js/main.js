@@ -91,6 +91,25 @@ document.addEventListener('DOMContentLoaded', () => {
             textAnimationExplanation: "These effects use a combination of JavaScript to manipulate text content or classes, and CSS for the actual animation styling (transitions, keyframes).",
             restartAnimation: "Restart",
 
+            // Scroll-triggered Animations Translations
+            scrollTriggeredEffectTitle: "Scroll-triggered Animations",
+            scrollTriggeredEffectDescription: "Elements animate into view (fade, slide, zoom) as the user scrolls down the page, powered by the Intersection Observer API.",
+            scrollTriggeredIntro: "Elements animate into view as you scroll down the page. This uses the Intersection Observer API for efficiency.",
+            scrollSection1Title: "Scroll Down to See Magic",
+            scrollSection1Text: "Keep scrolling to reveal more content with cool animations.",
+            fadeInText: "This element fades in when it enters the viewport.",
+            slideInLeftTitle: "Slide In From Left",
+            slideInLeftText: "This content block slides in from the left.",
+            slideInRightTitle: "Slide In From Right",
+            slideInRightText: "And this one slides in from the right, with a slight delay!",
+            zoomInText: "This box zooms in!",
+            slideUpRevealTitle: "Content Reveals with Slide Up",
+            slideUpRevealText1: "Line one appears.",
+            slideUpRevealText2: "Then line two.",
+            slideUpRevealText3: "And finally, line three.",
+            counterUpTitle: "Number Counter",
+            scrollEndText: "You've reached the end of the scroll-triggered animations demo!",
+
             // About page specific
             aboutTitle: "About This Project",
             aboutText: "This project is a showcase of various website visual effects, created by Halil İbrahim Yesirci. It's built using Flask for the backend and pure HTML, CSS, and JavaScript for the frontend effects. The goal is to demonstrate creative possibilities and provide inspiration for web designers and developers.",
@@ -160,6 +179,25 @@ document.addEventListener('DOMContentLoaded', () => {
             slideUpLine3: "Saf CSS ve JS!",
             textAnimationExplanation: "Bu efektler, metin içeriğini veya sınıfları manipüle etmek için JavaScript ve gerçek animasyon stilleri (geçişler, anahtar kareler) için CSS kombinasyonunu kullanır.",
             restartAnimation: "Yeniden Başlat",
+
+            // Scroll-triggered Animations Translations
+            scrollTriggeredEffectTitle: "Kaydırma Tetiklemeli Animasyonlar",
+            scrollTriggeredEffectDescription: "Kullanıcı sayfayı aşağı kaydırdıkça öğeler görünür hale gelir (solma, kayma, yakınlaştırma), Intersection Observer API tarafından desteklenir.",
+            scrollTriggeredIntro: "Sayfayı aşağı kaydırdıkça öğeler görünür hale gelir. Bu, verimlilik için Intersection Observer API kullanır.",
+            scrollSection1Title: "Sihri Görmek İçin Aşağı Kaydırın",
+            scrollSection1Text: "Daha fazla içeriği harika animasyonlarla ortaya çıkarmak için kaydırmaya devam edin.",
+            fadeInText: "Bu öğe, görünüm alanına girdiğinde solmaya başlar.",
+            slideInLeftTitle: "Soldan Kayarak İçeri Gir",
+            slideInLeftText: "Bu içerik bloğu soldan kayarak içeri girer.",
+            slideInRightTitle: "Sağdan Kayarak İçeri Gir",
+            slideInRightText: "Ve bu, biraz gecikmeyle sağdan kayarak içeri girer!",
+            zoomInText: "Bu kutu yakınlaştırılır!",
+            slideUpRevealTitle: "Yukarı Kaydırma ile İçerik Açıklamaları",
+            slideUpRevealText1: "Birinci satır görünür.",
+            slideUpRevealText2: "Sonra ikinci satır.",
+            slideUpRevealText3: "Ve sonunda üçüncü satır.",
+            counterUpTitle: "Sayı Sayacı",
+            scrollEndText: "Kaydırma tetiklemeli animasyonlar demosunun sonuna ulaştınız!",
 
             // About page specific
             aboutTitle: "Proje Hakkında",

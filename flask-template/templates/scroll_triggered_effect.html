@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}<span data-lang-key="scrollTriggeredEffectTitle">Scroll-triggered Animations</span> - Cool Effects{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scroll_triggered_effect.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container scroll-triggered-page-common">
+    <h1 data-lang-key="scrollTriggeredEffectTitle">Scroll-triggered Animations</h1>
+    <p class="intro-text" data-lang-key="scrollTriggeredIntro">Elements animate into view as you scroll down the page. This uses the Intersection Observer API for efficiency.</p>
+
+    <div class="scroll-content">
+        <section class="scroll-section">
+            <h2 data-lang-key="scrollSection1Title">Scroll Down to See Magic</h2>
+            <p data-lang-key="scrollSection1Text">Keep scrolling to reveal more content with cool animations.</p>
+        </section>
+
+        <section class="scroll-section">
+            <div class="animated-element fade-in">
+                <img src="https://picsum.photos/seed/scroll1/400/250" alt="Animated Image">
+                <p data-lang-key="fadeInText">This element fades in when it enters the viewport.</p>
+            </div>
+        </section>
+
+        <section class="scroll-section">
+            <div class="animated-element slide-in-left">
+                <h3 data-lang-key="slideInLeftTitle">Slide In From Left</h3>
+                <p data-lang-key="slideInLeftText">This content block slides in from the left.</p>
+            </div>
+            <div class="animated-element slide-in-right delay-1">
+                 <h3 data-lang-key="slideInRightTitle">Slide In From Right</h3>
+                <p data-lang-key="slideInRightText">And this one slides in from the right, with a slight delay!</p>
+            </div>
+        </section>
+        
+        <section class="scroll-section">
+            <div class="animated-element zoom-in">
+                <p data-lang-key="zoomInText">This box zooms in!</p>
+            </div>
+        </section>
+
+        <section class="scroll-section">
+            <div class="animated-element slide-up-reveal">
+                <h3 data-lang-key="slideUpRevealTitle">Content Reveals with Slide Up</h3>
+                <p data-lang-key="slideUpRevealText1">Line one appears.</p>
+                <p data-lang-key="slideUpRevealText2">Then line two.</p>
+                <p data-lang-key="slideUpRevealText3">And finally, line three.</p>
+            </div>
+        </section>
+        
+        <section class="scroll-section">
+             <div class="animated-element counter-up">
+                <h3 data-lang-key="counterUpTitle">Number Counter</h3>
+                <span class="number-count" data-target="12345">0</span>
+            </div>
+        </section>
+
+        <section class="scroll-section">
+            <p class="outro-text" data-lang-key="scrollEndText">You've reached the end of the scroll-triggered animations demo!</p>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/scroll_triggered_effect.js') }}"></script>
+{% endblock %}

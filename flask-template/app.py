@@ -35,6 +35,10 @@ def cursor_trail_effect():
 def text_animation_effect():
     return render_template('text_animation_effect.html')
 
+@app.route('/scroll-triggered')
+def scroll_triggered_effect():
+    return render_template('scroll_triggered_effect.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')

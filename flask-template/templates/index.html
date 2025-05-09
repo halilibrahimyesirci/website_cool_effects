@@ -77,6 +77,15 @@
             <a href="{{ url_for('text_animation_effect') }}" class="btn-view-effect" data-lang-key="viewEffect">View Effect</a>
         </div>
     </div>
+
+    <!-- Scroll-triggered Animations Effect Card -->
+    <div class="effect-card">
+        <h3 data-lang-key="scrollTriggeredEffectTitle">Scroll-triggered Animations</h3>
+        <p data-lang-key="scrollTriggeredEffectDescription">Elements animate into view (fade, slide, zoom) as the user scrolls down the page, powered by the Intersection Observer API.</p>
+        <div class="button-container">
+            <a href="{{ url_for('scroll_triggered_effect') }}" class="btn-view-effect" data-lang-key="viewEffect">View Effect</a>
+        </div>
+    </div>
 </div>
 <p class="mt-3 text-center" data-lang-key="moreEffectsComing">More cool effects coming soon!</p>
 {% endblock %}
