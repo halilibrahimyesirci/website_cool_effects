@@ -1,5 +1,31 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}<span data-lang-key="aboutTitle">About This Project</span> - Cool Effects{% endblock %}
 
 {% block content %}
-    <h1>{% block title %} Welcome to your About page! {% endblock %}</h1>
+<div class="effect-container">
+    <h1 data-lang-key="aboutTitle">About This Project</h1>
+    <p data-lang-key="aboutText">
+        This project is a showcase of various website visual effects, created by Halil İbrahim Yesirci. 
+        It's built using Flask for the backend and pure HTML, CSS, and JavaScript for the frontend effects. 
+        The goal is to demonstrate creative possibilities and provide inspiration for web designers and developers.
+    </p>
+    
+    <h2 data-lang-key="techUsed" class="mt-2">Technologies Used:</h2>
+    <ul>
+        <li>Flask (Python Web Framework)</li>
+        <li>HTML5</li>
+        <li>CSS3 (including Flexbox, Grid, Animations, Filters)</li>
+        <li>JavaScript (ES6+)</li>
+    </ul>
+
+    <div class="mt-2 text-center">
+        <a href="{{ url_for('index') }}" class="btn-view-effect" data-lang-key="backToHome">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {# No specific JS for this page other than main.js #}
 {% endblock %}
