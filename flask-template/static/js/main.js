@@ -78,6 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
             spotlightExampleTitle: "Spotlight Content",
             spotlightExampleText: "If this were a spotlight effect, only the area around your cursor would be clearly visible.",
 
+            // Text Animation Effect Translations
+            textAnimationEffectTitle: "Text Animation Effects",
+            textAnimationEffectDescription: "Engaging animations like typing effects, text reveals, and sliding text to make content more dynamic.",
+            textAnimationIntro: "Various animations to bring text to life, such as typing effects, reveals, and more.",
+            typingEffectTitle: "Typing Effect",
+            revealEffectTitle: "Text Reveal (Fade & Slide In)",
+            slideUpEffectTitle: "Text Line Slide Up",
+            slideUpLine1: "Each line slides up.",
+            slideUpLine2: "Creating a dynamic entrance.",
+            slideUpLine3: "Pure CSS and JS!",
+            textAnimationExplanation: "These effects use a combination of JavaScript to manipulate text content or classes, and CSS for the actual animation styling (transitions, keyframes).",
+            restartAnimation: "Restart",
+
             // About page specific
             aboutTitle: "About This Project",
             aboutText: "This project is a showcase of various website visual effects, created by Halil İbrahim Yesirci. It's built using Flask for the backend and pure HTML, CSS, and JavaScript for the frontend effects. The goal is to demonstrate creative possibilities and provide inspiration for web designers and developers.",
@@ -134,6 +147,19 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorTrailExplanation: "Bu efekt, fare hareketlerini izlemek ve imleci takip eden görsel bir iz veya bir spot ışığı oluşturmak için dinamik olarak öğeler oluşturmak veya güncellemek için JavaScript kullanır.",
             spotlightExampleTitle: "Spotlight İçerik",
             spotlightExampleText: "Bu bir spotlight efekti olsaydı, yalnızca imlecinizin etrafındaki alan net bir şekilde görünür olurdu.",
+
+            // Text Animation Effect Translations
+            textAnimationEffectTitle: "Metin Animasyon Efektleri",
+            textAnimationEffectDescription: "İçeriği daha dinamik hale getirmek için yazma efektleri, metin açıklamaları ve kayan metin gibi etkileyici animasyonlar.",
+            textAnimationIntro: "Metni canlandırmak için çeşitli animasyonlar, yazma efektleri, açıklamalar ve daha fazlası.",
+            typingEffectTitle: "Yazma Efekti",
+            revealEffectTitle: "Metin Açıklama (Solma ve Kayarak İçeri Girme)",
+            slideUpEffectTitle: "Metin Satırı Yukarı Kaydırma",
+            slideUpLine1: "Her satır yukarı kayar.",
+            slideUpLine2: "Dinamik bir giriş oluşturur.",
+            slideUpLine3: "Saf CSS ve JS!",
+            textAnimationExplanation: "Bu efektler, metin içeriğini veya sınıfları manipüle etmek için JavaScript ve gerçek animasyon stilleri (geçişler, anahtar kareler) için CSS kombinasyonunu kullanır.",
+            restartAnimation: "Yeniden Başlat",
 
             // About page specific
             aboutTitle: "Proje Hakkında",

@@ -31,6 +31,10 @@ def parallax_effect():
 def cursor_trail_effect():
     return render_template('cursor_trail_effect.html')
 
+@app.route('/text-animation')
+def text_animation_effect():
+    return render_template('text_animation_effect.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')

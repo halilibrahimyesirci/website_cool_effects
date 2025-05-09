@@ -1,0 +1,121 @@
+/* Text Animation Effect Styles */
+
+.text-animation-page-common {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.text-animation-page-common h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+.text-animation-page-common > p[data-lang-key="textAnimationIntro"] {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+}
+
+
+.animation-example {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden; /* For animations that might go outside bounds initially */
+}
+
+.animation-example h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* Typing Effect */
+.typing-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    white-space: pre-wrap; /* Allows wrapping and preserves spaces */
+    border-right: 0.1em solid var(--accent-color); /* Blinking cursor */
+    animation: blink-caret 0.75s step-end infinite;
+    min-height: 2.5em; /* To prevent layout shift while typing */
+    display: inline-block; /* To make border-right work correctly */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--accent-color); }
+}
+
+/* Text Reveal (Fade & Slide In) */
+.reveal-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.reveal-text .reveal-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) translateX(-10px) rotate(-5deg);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    margin-right: 2px; /* Adjust spacing between characters */
+}
+
+.reveal-text .reveal-char.revealed {
+    opacity: 1;
+    transform: translateY(0) translateX(0) rotate(0deg);
+}
+
+/* Text Line Slide Up */
+.slide-up-container {
+    overflow: hidden; /* Crucial for the slide-up effect */
+}
+.slide-up-text {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    margin-bottom: 10px;
+    will-change: transform, opacity;
+}
+
+.slide-up-text.slid-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.text-animation-page-common p[data-lang-key="textAnimationExplanation"] {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-restart-animation {
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Ensure contrast */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-restart-animation:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
