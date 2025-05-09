@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Blur Effect 3: Spoiler Blur{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blur_effect.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container blur-page-common">
+    <h1>Blur Effect 3: Spoiler Blur</h1>
+    <div class="spoiler-blur-wrapper">
+        <div class="spoiler-text blurred" tabindex="0">
+            <p>This is a secret message! Click or focus to reveal.</p>
+            <p>The killer was... the butler!</p>
+        </div>
+        <div class="spoiler-image-container blurred" tabindex="0">
+            <img src="https://picsum.photos/seed/spoilerme/300/200" alt="Spoiler Image">
+            <span>Click to reveal image</span>
+        </div>
+    </div>
+    <p>Click on the blurred areas to reveal the content. This uses CSS for the blur and JavaScript to toggle the blur effect.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/blur_effect.js') }}"></script>
+{% endblock %}

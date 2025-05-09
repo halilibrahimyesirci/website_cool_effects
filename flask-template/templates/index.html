@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Cool Website Effects{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Cool Website Effects!</h1>
+    <p>This website showcases a variety of cool visual effects implemented using HTML, CSS, and JavaScript within a Flask template.</p>
+    <p>Explore the different effects using the navigation menu or the links below:</p>
+
+    <h2>Effect Categories:</h2>
+    <ul>
+        <li>
+            <h3><a href="{{ url_for('liquid_chrome') }}">Liquid Chrome Effect</a></h3>
+            <p>A mesmerizing metallic and fluid animation.</p>
+        </li>
+        <li>
+            <h3><a href="{{ url_for('glitch') }}">Glitch Effect</a></h3>
+            <p>Simulates digital distortion on text and images.</p>
+        </li>
+        <li>
+            <h3>Loading Screen Effects</h3>
+            <ul>
+                <li><a href="{{ url_for('loading_screen', effect_id=1) }}">Loading Effect 1: Simple Spinner</a></li>
+                <li><a href="{{ url_for('loading_screen', effect_id=2) }}">Loading Effect 2: Bouncing Dots</a></li>
+                <li><a href="{{ url_for('loading_screen', effect_id=3) }}">Loading Effect 3: Pulsing Circle</a></li>
+                <li><a href="{{ url_for('loading_screen', effect_id=4) }}">Loading Effect 4: Progress Bar</a></li>
+                <li><a href="{{ url_for('loading_screen', effect_id=5) }}">Loading Effect 5: Rotating Squares</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Blur Effects</h3>
+            <ul>
+                <li><a href="{{ url_for('blur_effect', effect_id=1) }}">Blur Effect 1: Background Blur</a></li>
+                <li><a href="{{ url_for('blur_effect', effect_id=2) }}">Blur Effect 2: Image Hover Blur</a></li>
+                <li><a href="{{ url_for('blur_effect', effect_id=3) }}">Blur Effect 3: Spoiler Blur</a></li>
+                <li><a href="{{ url_for('blur_effect', effect_id=4) }}">Blur Effect 4: Glassmorphism</a></li>
+                <li><a href="{{ url_for('blur_effect', effect_id=5) }}">Blur Effect 5: Lazy Load Image Blur</a></li>
+            </ul>
+        </li>
+        <!-- Add links to other effects as they are created -->
+    </ul>
+</div>
+{% endblock %}

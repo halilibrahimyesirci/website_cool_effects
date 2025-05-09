@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Blur Effect 1: Background Blur{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blur_effect.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container blur-page-common">
+    <h1>Blur Effect 1: Background Blur</h1>
+    <div class="background-blur-wrapper">
+        <div class="background-image-container blur-bg-1">
+            <!-- This div will have the blurred background -->
+        </div>
+        <div class="content-overlay">
+            <h2>Content Over Blurred Background</h2>
+            <p>This text is placed over a blurred background image. The blur is achieved using the CSS <code>backdrop-filter</code> property or by blurring the background image itself and placing content on top.</p>
+        </div>
+    </div>
+    <p>Demonstrates a common technique for creating depth and focus.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/blur_effect.js') }}"></script>
+{% endblock %}

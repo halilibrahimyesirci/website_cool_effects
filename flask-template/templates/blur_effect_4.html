@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Blur Effect 4: Glassmorphism{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blur_effect.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container blur-page-common glassmorphism-bg">
+    <h1>Blur Effect 4: Glassmorphism</h1>
+    <div class="glass-panel-wrapper">
+        <div class="glass-panel">
+            <h2>Glass Panel</h2>
+            <p>This panel demonstrates the glassmorphism effect, characterized by a frosted-glass look with blur and transparency. It sits on top of a colorful background to highlight the effect.</p>
+            <button>A Button</button>
+        </div>
+         <div class="glass-panel small-panel">
+            <h3>Info</h3>
+            <p>Another smaller panel.</p>
+        </div>
+    </div>
+    <p>This popular UI trend creates a sense of depth and hierarchy.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/blur_effect.js') }}"></script>
+{% endblock %}

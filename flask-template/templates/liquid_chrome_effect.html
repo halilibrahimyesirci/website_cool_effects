@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Liquid Chrome Effect{% endblock %}
+{% block head_links %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/liquid_chrome.css') }}">
+{% endblock %}
+{% block content %}
+<div class="container effect-container">
+    <h1>Liquid Chrome Effect</h1>
+    <div class="chrome-effect-wrapper">
+        <svg width="0" height="0">
+            <filter id="liquid-chrome">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.03" numOctaves="3" seed="0" result="turbulence"/>
+                <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="50" xChannelSelector="R" yChannelSelector="G" result="displacement"/>
+                <feGaussianBlur in="displacement" stdDeviation="10" result="blur"/>
+                <feColorMatrix in="blur" type="matrix" values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 25 -10
+                " result="contrast"/>
+                <feComposite in="SourceGraphic" in2="contrast" operator="atop"/>
+            </filter>
+        </svg>
+        <div class="liquid-shape"></div>
+        <div class="liquid-shape-two"></div>
+    </div>
+    <p>This effect uses SVG filters to create a metallic, fluid, and reflective appearance. The animation is achieved using CSS.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/liquid_chrome.js') }}"></script>
+{% endblock %}

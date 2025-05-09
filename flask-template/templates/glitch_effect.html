@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Glitch Effect{% endblock %}
+{% block head_links %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/glitch.css') }}">
+{% endblock %}
+{% block content %}
+<div class="container effect-container">
+    <h1>Glitch Effect</h1>
+    
+    <div class="glitch-wrapper">
+        <div class="glitch-text" data-text="GLITCH">GLITCH</div>
+    </div>
+
+    <div class="glitch-wrapper" style="margin-top: 50px;">
+        <img src="https://picsum.photos/seed/picsumglitch/400/300" alt="Glitch Image" class="glitch-image">
+        <img src="https://picsum.photos/seed/picsumglitch/400/300" alt="Glitch Image" class="glitch-image">
+        <img src="https://picsum.photos/seed/picsumglitch/400/300" alt="Glitch Image" class="glitch-image">
+    </div>
+    <p>This effect simulates a digital error, creating distortions in text and images. It's achieved primarily with CSS animations and pseudo-elements.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/glitch.js') }}"></script>
+{% endblock %}

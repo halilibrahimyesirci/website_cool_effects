@@ -1,0 +1,121 @@
+/* Liquid Chrome Effect CSS */
+body {
+    /* Ensure body takes up full viewport height if effect is page-centric */
+    /* background-color: #111; */ /* Dark background can make chrome pop */
+}
+
+.effect-container {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.chrome-effect-wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 40px auto;
+    position: relative;
+    background: radial-gradient(circle, #dddddd, #aaaaaa); /* Fallback or base for the effect */
+    border-radius: 15px; /* Optional: if you want the container itself to be rounded */
+    overflow: hidden; /* Important if shapes move outside bounds */
+}
+
+.liquid-shape, .liquid-shape-two {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: url(#liquid-chrome);
+    background: linear-gradient(135deg, #ffffff, #c0c0c0, #808080); /* Metallic gradient */
+    border-radius: 50%; /* Make it a circle */
+}
+
+.liquid-shape {
+    width: 200px;
+    height: 200px;
+    top: 50px;
+    left: 50px;
+    background: linear-gradient(135deg, #f0f0f0, #b0b0b0, #707070);
+    animation: liquidMove 15s infinite linear, morph 10s infinite alternate ease-in-out;
+}
+
+.liquid-shape-two {
+    width: 150px;
+    height: 150px;
+    top: 75px;
+    left: 75px;
+    background: linear-gradient(-135deg, #e0e0e0, #a0a0a0, #606060);
+    opacity: 0.8;
+    animation: liquidMoveTwo 18s infinite linear, morphTwo 12s infinite alternate ease-in-out;
+}
+
+@keyframes liquidMove {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, 15px) rotate(45deg);
+    }
+    50% {
+        transform: translate(-10px, -5px) rotate(90deg);
+    }
+    75% {
+        transform: translate(5px, -15px) rotate(135deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(180deg); /* Adjusted to make it loop smoother with morph */
+    }
+}
+
+@keyframes liquidMoveTwo {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-12px, 8px) rotate(-30deg);
+    }
+    50% {
+        transform: translate(8px, -12px) rotate(-60deg);
+    }
+    75% {
+        transform: translate(-5px, 10px) rotate(-90deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(-120deg); /* Adjusted */
+    }
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+    50% {
+        border-radius: 60% 40% 30% 70% / 50% 60% 50% 40%;
+    }
+    100% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+}
+
+@keyframes morphTwo {
+    0% {
+        border-radius: 70% 30% 40% 60% / 60% 50% 40% 50%;
+    }
+    50% {
+        border-radius: 30% 70% 60% 40% / 50% 40% 50% 60%;
+    }
+    100% {
+        border-radius: 70% 30% 40% 60% / 60% 50% 40% 50%;
+    }
+}
+
+/* Optional: Style for the main container of the effect page */
+.effect-container h1 {
+    color: #333;
+}
+.effect-container p {
+    color: #555;
+    margin-top: 20px;
+}
+

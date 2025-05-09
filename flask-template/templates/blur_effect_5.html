@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Blur Effect 5: Lazy Load Image Blur{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blur_effect.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container blur-page-common">
+    <h1>Blur Effect 5: Lazy Load Image Blur</h1>
+    <div class="lazy-load-gallery">
+        <div class="lazy-image-container">
+            <img src="https://picsum.photos/id/10/20/15" data-src="https://picsum.photos/id/10/400/300" alt="Lazy Loaded Image 1" class="lazy-image">
+        </div>
+        <div class="lazy-image-container">
+            <img src="https://picsum.photos/id/20/20/15" data-src="https://picsum.photos/id/20/400/300" alt="Lazy Loaded Image 2" class="lazy-image">
+        </div>
+        <div class="lazy-image-container">
+            <img src="https://picsum.photos/id/30/20/15" data-src="https://picsum.photos/id/30/400/300" alt="Lazy Loaded Image 3" class="lazy-image">
+        </div>
+         <div class="lazy-image-container">
+            <img src="https://picsum.photos/id/40/20/15" data-src="https://picsum.photos/id/40/400/300" alt="Lazy Loaded Image 4" class="lazy-image">
+        </div>
+    </div>
+    <p>Images initially show a blurred, low-resolution placeholder. The full-resolution image loads and unblurs as it comes into view or after a delay. This requires JavaScript.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/blur_effect.js') }}"></script>
+{% endblock %}

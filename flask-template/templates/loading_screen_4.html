@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Loading Screen Effect 4{% endblock %}
+
+{% block head_links %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading_screen.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="effect-container">
+    <h1>Loading Screen Effect 4: Progress Bar</h1>
+    <div class="loader-container">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <p>A horizontal bar that animates to fill up.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/loading_screen.js') }}"></script>
+{% endblock %}

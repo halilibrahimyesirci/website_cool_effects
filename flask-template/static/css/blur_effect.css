@@ -1,0 +1,244 @@
+/* General styles for blur effect pages */
+
+.blur-page-common h1 {
+    margin-bottom: 30px;
+}
+
+.blur-page-common p {
+    margin-top: 20px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* --- Blur Effect 1: Background Blur --- */
+.background-blur-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden; /* Important for containing the ::before pseudo-element */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.background-image-container.blur-bg-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://picsum.photos/seed/bgblur/800/500');
+    background-size: cover;
+    background-position: center;
+    /* The blur is applied by the ::before pseudo-element or backdrop-filter on content-overlay */
+}
+
+.content-overlay {
+    position: relative; /* Changed from absolute to relative for backdrop-filter to work on this element */
+    width: 80%;
+    height: auto; /* Adjust height as needed or make it fit content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%); /* For Safari */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    color: #000; /* Darker text for readability on light blurred background */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.content-overlay h2 {
+    margin-top: 0;
+    color: #111;
+}
+
+/* --- Blur Effect 2: Image Hover Blur --- */
+.image-hover-blur-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.hover-blur-image {
+    width: 300px; /* Adjust as needed */
+    height: 225px; /* Adjust as needed */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: filter 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.hover-blur-image:hover {
+    filter: blur(5px);
+}
+
+/* --- Blur Effect 3: Spoiler Blur --- */
+.spoiler-blur-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.spoiler-text,
+.spoiler-image-container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: filter 0.3s ease-out, color 0.3s ease-out, text-shadow 0.3s ease-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.spoiler-text.blurred,
+.spoiler-image-container.blurred img {
+    filter: blur(8px);
+}
+
+.spoiler-text.blurred {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5); /* Makes text unreadable */
+}
+
+.spoiler-image-container {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+}
+
+.spoiler-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: filter 0.3s ease-out;
+}
+
+.spoiler-image-container span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.spoiler-image-container.blurred span {
+    opacity: 1;
+}
+
+/* --- Blur Effect 4: Glassmorphism --- */
+.glassmorphism-bg {
+    background-image: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    padding: 40px 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.glass-panel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%); /* For Safari */
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Subtle shadow */
+    color: #fff;
+    width: 100%;
+    max-width: 450px;
+}
+
+.glass-panel.small-panel {
+    max-width: 300px;
+    padding: 20px;
+}
+
+.glass-panel h2, .glass-panel h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.glass-panel p {
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+
+.glass-panel button {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.glass-panel button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Blur Effect 5: Lazy Load Image Blur --- */
+.lazy-load-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.lazy-image-container {
+    width: 100%;
+    padding-top: 75%; /* Aspect ratio 4:3 */
+    position: relative;
+    background-color: #eee; /* Placeholder background */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lazy-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px); /* Initial blur for placeholder */
+    transform: scale(1.1); /* Slightly zoom to avoid blurred edges */
+    transition: filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.lazy-image.loaded {
+    filter: blur(0);
+    transform: scale(1);
+}
